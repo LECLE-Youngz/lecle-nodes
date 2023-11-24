@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
+    "start": "node dist/main",
     "start:node1": "export NODE_NAME=node1 && nest start",
     "start:node2": "export NODE_NAME=node2 && nest start",
     "start:node3": "export NODE_NAME=node3 && nest start",
@@ -49,7 +50,6 @@
     "dotenv": "^16.0.3",
     "eccrypto": "^1.1.6",
     "elliptic": "^6.5.4",
-    "ethers": "^6.7.1",
     "google-auth-library": "^9.0.0",
     "keccak": "^3.0.3",
     "mongoose": "^6.9.1",
