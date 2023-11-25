@@ -1,13 +1,14 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
+import * as dotenv from "dotenv"
+dotenv.config()
+
 export default {
   "node1": {
-    "url": "104.215.58.230:4001"
+    "url": process.env.NODE1_URL
   },
   "node2": {
-    "url": "104.215.58.230:4002"
+    "url": process.env.NODE2_URL
   },
   "node3": {
-    "url": "104.215.58.230:4003"
+    "url": process.env.NODE3_URL
   }
 }
