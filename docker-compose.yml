@@ -2,7 +2,7 @@ version: '3'
 
 services:
   shared-nodes:
-    build: .
+    image: kiet1618/shared-node:latest
     ports:
       - "3001:3001"
       - "3002:3002"
