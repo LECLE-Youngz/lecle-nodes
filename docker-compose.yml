@@ -1,5 +1,4 @@
 version: '3'
-
 services:
   shared-nodes:
     image: kiet1618/shared-node:latest
@@ -7,4 +6,13 @@ services:
       - "3001:3001"
       - "3002:3002"
       - "3003:3003"
-    command: /app/start.sh
+    command: /bin/sh -c "export NODE_NAME=node1 && export PORT=3001 && npm run start:node1 & export NODE_NAME=node2 && export PORT=3002 && npm run start:node2 & export NODE_NAME=node3 && export PORT=3003 && npm run start:node3 & tail -f /dev/null"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "4000:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - shared-nodes
