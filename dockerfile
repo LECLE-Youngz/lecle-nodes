@@ -20,7 +20,7 @@ EXPOSE 3001 3002 3003
 COPY start.sh /app/start.sh
 
 # Make the script executable
-RUN chmod +x /app/start.she
+RUN chmod +x /app/start.sh
 
 # Set the default command to execute the script
 CMD ["/app/start.sh"]

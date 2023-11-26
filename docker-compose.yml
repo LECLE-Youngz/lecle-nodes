@@ -2,7 +2,7 @@ version: '3'
 
 services:
   shared-nodes:
-    image: kiet1618/shared-node:tagname
+    image: kiet1618/shared-node:latest
     ports:
       - "3001:3001"
       - "3002:3002"
