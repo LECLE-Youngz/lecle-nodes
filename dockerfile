@@ -22,5 +22,15 @@ COPY start.sh /app/start.sh
 # Make the script executable
 RUN chmod +x /app/start.sh
 
+# Install NGINX
+RUN apt-get update && \
+    apt-get install -y nginx
+
+# Remove the default NGINX configuration
+RUN rm /etc/nginx/sites-enabled/default
+
+# Copy your NGINX configuration file to the container
+COPY nginx.conf /etc/nginx/sites-enabled/
+
 # Set the default command to execute the script
 CMD ["/app/start.sh"]

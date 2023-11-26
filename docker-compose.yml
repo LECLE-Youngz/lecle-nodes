@@ -7,7 +7,6 @@ services:
       - "3002:3002"
       - "3003:3003"
     command: /bin/sh -c "export NODE_NAME=node1 && export PORT=3001 && npm run start:node1 & export NODE_NAME=node2 && export PORT=3002 && npm run start:node2 & export NODE_NAME=node3 && export PORT=3003 && npm run start:node3 & tail -f /dev/null"
-
   nginx:
     image: nginx:latest
     ports:
